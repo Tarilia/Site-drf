@@ -1,3 +1,9 @@
-from django.shortcuts import render
+from rest_framework import generics
 
-# Create your views here.
+from site_drf.drf.models import Sitedrf
+from site_drf.drf.serializers import DogSerializer
+
+
+class DogAPIView(generics.ListAPIView):
+    queryset = Sitedrf.objects.all()
+    serializer_class = DogSerializer
