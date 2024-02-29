@@ -8,6 +8,12 @@ class DogAPIList(generics.ListCreateAPIView):
     queryset = Sitedrf.objects.all()
     serializer_class = DogSerializer
 
+
+class DogAPIUpdate(generics.UpdateAPIView):
+    queryset = Sitedrf.objects.all()
+    serializer_class = DogSerializer
+
+
 # class DogAPIView(generics.ListAPIView):
 #     queryset = Sitedrf.objects.all()
 #     serializer_class = DogSerializer
