@@ -6,4 +6,4 @@ from site_drf.drf.models import Sitedrf
 class DogSerializer(serializers.ModelSerializer):
     class Meta:
         model = Sitedrf
-        fields = ('title', 'cat_id')
+        fields = "__all__"
