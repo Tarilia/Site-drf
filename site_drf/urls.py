@@ -5,8 +5,8 @@ from site_drf.drf.views import DogViewSet
 from rest_framework import routers
 
 
-router = routers.SimpleRouter()
-router.register(r'dog', DogViewSet)
+router = routers.DefaultRouter()
+router.register(r'dog', DogViewSet, basename='dog')
 
 
 urlpatterns = [
