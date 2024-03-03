@@ -2,6 +2,7 @@ from rest_framework import generics
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 from site_drf.drf.models import Sitedrf
+from sitedrf.drf.permissions import IsAdminORReadOnly
 from site_drf.drf.serializers import DogSerializer
 
 
@@ -19,6 +20,7 @@ class DogAPIUpdate(generics.RetrieveUpdateAPIView):
 class DogAPIDestroy(generics.RetrieveDestroyAPIView):
     queryset = Sitedrf.objects.all()
     serializer_class = DogSerializer
+    permission_classes = (IsAdminORReadOnly, )
 
 
 # class DogViewSet(viewsets.ModelViewSet):
