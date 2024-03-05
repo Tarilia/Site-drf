@@ -1,5 +1,5 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 from site_drf.drf.views import DogAPIList, DogAPIUpdate, DogAPIDestroy
 # from rest_framework import routers
@@ -11,6 +11,7 @@ from site_drf.drf.views import DogAPIList, DogAPIUpdate, DogAPIDestroy
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/auth/', include('rest_framework.urls')),
     path('api/dog/', DogAPIList.as_view()),
     path('api/dog/<int:pk>/', DogAPIUpdate.as_view()),
     path('api/dogdelete/<int:pk>/', DogAPIDestroy.as_view()),
